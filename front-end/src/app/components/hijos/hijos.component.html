@@ -1,0 +1,23 @@
+<div class="col-md-6">
+    <h1 class="text-primary">Hijos</h1>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">padre</th>
+            <th scope="col">Cumpleaños</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of children" >
+                <td>{{ item.fullname}}</td>
+                <td>{{ item.adopter | padre |json  }}</td>
+                <td>{{item.birth | date: "dd-mm-yy"}}</td>
+
+                
+            </tr>
+        
+        </tbody>
+    </table>
+    <h1>{{padre.fullname |json}}</h1>
+</div>

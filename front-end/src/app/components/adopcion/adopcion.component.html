@@ -1,0 +1,22 @@
+<div class="col-md-6">
+    <h1 class="text-primary">Personas en adopción</h1>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Cumpleaños</th>
+            <th scope="col">Adoptado</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of persons">
+                <td>{{ item.fullname}}</td>
+                <td>{{item.birth | date: "dd-mm-yy"}}</td>
+                <td>
+                    <button class="btn btn-outline-warning" (click)="adop(item)">Adoptar</button>
+                </td>
+                
+            </tr>
+        </tbody>
+    </table>
+</div>

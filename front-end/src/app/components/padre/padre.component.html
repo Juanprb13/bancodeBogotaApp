@@ -1,0 +1,25 @@
+<div class="col-md-6">
+    <h1 class="text-primary">Padres</h1>
+    <table class="table">
+        <thead class="thead-dark">
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Cumpleaños</th>
+            <th scope="col">Adoptado</th>
+            <th> Eliminar</th>
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of persons">
+                <td>{{ item.fullname}}</td>
+                <td>{{item.birth | date: "dd-mm-yy"}}</td>
+                <td>
+                    <a [routerLink]="['/adoptar',item._id]" class="btn btn-outline-success">Adoptar</a>
+                </td>
+                <td>
+                    <a href="" class="btn btn-outline-danger" (click)="eleminar(item._id)">X</a>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>
